@@ -7,19 +7,28 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ProgramsComponent } from './programs/programs.component';
 import {HttpClientModule} from '@angular/common/http';
 import { SearchPipe } from './search.pipe'
-import {FormsModule } from "@angular/forms"
+import {FormsModule } from "@angular/forms";
+import { NotfoundComponent } from './notfound/notfound.component';
+import { HomeComponent } from './home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import {ScrollingModule} from '@angular/cdk/scrolling'
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ProgramsComponent,
-    SearchPipe
+    SearchPipe,
+    NotfoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule ,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ScrollingModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
