@@ -3,7 +3,15 @@
 {"type":"database","name":"useregistration"},
 {"type":"table","name":"progs","database":"useregistration","data":
 [
-{"Name":"Bachelor of Computer Sciences","Language":"English","type":"Computer Science & IT","city":"Paris","level":"Bachelor","length":"3 years","fee":"9,900","intake":"Sept","school":"EPITA"},
+{"Name":"Bachelor of Computer Sciences",
+  "Language":"English",
+  "type":"Computer Science & IT",
+  "city":"Paris",
+  "level":"Bachelor",
+  "length":"3 years",
+  "fee":"9,900",
+  "intake":"Sept",
+  "school":"EPITA"},
 {"Name":"Msc Computer Sciences","Language":"English","type":"Computer Science & IT","city":"Paris","level":"Msc","length":"18 months","fee":"12,900","intake":"Sept, March","school":"EPITA"},
 {"Name":"Msc Artificial Intelligence Systems","Language":"English","type":"Artificial Intelligence\n","city":"Paris","level":"Msc","length":"2 years","fee":"9,000","intake":"Sept, March","school":"EPITA"},
 {"Name":"Msc Artificial Intelligence for Marketing Strategy","Language":"English","type":"Artificial Intelligence\n","city":"Paris","level":"Msc","length":"2 years","fee":"9,000","intake":"Sept, March","school":"EPITA"},

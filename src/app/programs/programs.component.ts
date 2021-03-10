@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GetprogramsService } from './../getprograms.service';
 
 @Component({
   selector: 'app-programs',
@@ -6,8 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./programs.component.css']
 })
 export class ProgramsComponent implements OnInit {
+  smartphone: any = [];
+  allData:any = [];
+  word:string ="" ;
+  constructor(private _GetprogramsService:GetprogramsService) {
 
-  constructor() { }
+    _GetprogramsService.getAllData().subscribe( (data) =>
+    {
+      this.allData = data[2].data
+      console.log(this.allData)
+    })
+
+   }
 
   ngOnInit(): void {
   }

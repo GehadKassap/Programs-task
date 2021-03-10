@@ -1,5 +1,4 @@
-import { Component  ,OnInit } from '@angular/core';
-import { GetprogramsService } from './getprograms.service';
+import { Component  } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,27 +8,12 @@ import { GetprogramsService } from './getprograms.service';
 export class AppComponent {
   title = 'programsTask';
 
-  smartphone: any = [];
-  constructor(private _GetprogramsService:GetprogramsService)
+  constructor()
   {
-    _GetprogramsService.getSmartphone()
-    .subscribe(data => {
-      console.log(data);
-    });
+
+
   }
 
-  // getSmartphones() {
-  //   this._GetprogramsService.getSmartphone()
-  //     .subscribe(data => {
-  //       // for (const d of (data as any)) {
-  //       //   this.smartphone.push({
-  //       //     name: d.name,
-  //       //     price: d.price
-  //       //   });
-  //       // }
-  //       console.log("data");
-  //     });
-  // }
 
 
 }

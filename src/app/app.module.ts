@@ -5,17 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProgramsComponent } from './programs/programs.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { SearchPipe } from './search.pipe'
+import {FormsModule } from "@angular/forms"
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ProgramsComponent
+    ProgramsComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule ,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
