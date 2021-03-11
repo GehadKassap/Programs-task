@@ -11,7 +11,10 @@ import {FormsModule } from "@angular/forms";
 import { NotfoundComponent } from './notfound/notfound.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import {ScrollingModule} from '@angular/cdk/scrolling'
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import { DetailsComponent } from './details/details.component';
+import { CitysearchPipe } from './citysearch.pipe';
+import { FilterprogPipe } from './filterprog.pipe'
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +22,10 @@ import {ScrollingModule} from '@angular/cdk/scrolling'
     ProgramsComponent,
     SearchPipe,
     NotfoundComponent,
-    HomeComponent
+    HomeComponent,
+    DetailsComponent,
+    CitysearchPipe,
+    FilterprogPipe
   ],
   imports: [
     BrowserModule,

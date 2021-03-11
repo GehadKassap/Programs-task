@@ -1,17 +1,18 @@
 <div class="cont">
   <div class="container">
-    <div class="row  pt-5 m-auto">
-      <div class=" input-group mb-3 w-75 inpGrp ml-5">
+    <div class="pt-5 m-auto">
+      <div class=" input-group mb-3 w-75 inpGrp ml-5  row">
         <input
           type="search"
           class="form-control col-lg-6 col-md-6 col-sm-12"
           placeholder="what do you whant to leaen?"
-          [(ngModel)]="word"
+          [(ngModel)]="wordType"
         />
         <input
           type="search"
-          class="form-control "
+          class="form-control col-lg-6 col-md-6 col-sm-12 "
           placeholder="Write or choose city"
+          [(ngModel)]="wordCity"
         />
 
         <div class="input-group-append">
@@ -181,20 +182,20 @@
       <div class="col-md-8 my-5 bg-white py-3 px-2 bgwhite">
         <cdk-virtual-scroll-viewport itemSize="100" class="showData mt-5">
           <!--display data data-->
-          <div *cdkVirtualFor="let item of allData|search:word" class="item">
+          <div *cdkVirtualFor="let item of allData|search:wordType |citysearch:wordCity |filterprog:wordFilter ; let i = index ;"  class="item">
             <div>
               <div class="row">
-                <div class="col-md-4 w-75 mt-5 ">
+                <div class="col-md-4  w-75 mt-5 ">
                   <img
                     [src]="imgHolder" class="w-50 ml-4 rounded" alt="" />
                 </div>
-                <div class="col-md-8 pt-5">
+                <div class="col-md-8  pt-5">
                   <h4>{{ item.Name }}</h4>
                   <p>{{ item.type }}</p>
                   <span class="mr-2 text-muted">Tuition Fee:</span>
                   <span class="text-primary mr-4 modifyInfo">{{ item.fee}} $ Per Year </span>
                   <span class="text-primary modifyInfo ">{{ item.city }}</span>
-                  <span class="ml-5 btn chgColorBtn text-white">More info</span>
+                  <span class="ml-5 btn chgColorBtn text-white" [routerLink] = "['/progdetails' , i]">More info</span>
                 </div>
               </div>
               <hr />

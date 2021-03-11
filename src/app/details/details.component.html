@@ -1,0 +1,38 @@
+<div class="container mt-5">
+  <div class="row mt-5 ml-5">
+    <div class="col-md-4 ml-5">
+      <img src="../../assets/Images/im5.jpg" class="w-100 rounded">
+    </div>
+    <div class="col-md-6 p-4">
+      <h2>{{ progDetails.Name}}</h2>
+      <p>{{progDetails.type}}</p>
+      <span class="font-italic font-weight-bold ifo">More Info :</span>
+      <table class="table table-striped w-100 pt-3 mt-4">
+        <thead>
+          <tr class="p-3">
+            <th scope="col " class="ml-2 font-weight-normal ">City</th>
+            <th scope="col " class="ml-2 font-weight-normal">Language</th>
+            <th scope="col " class="ml-2 font-weight-normal">Lenght</th>
+            <th scope="col " class="ml-2 font-weight-normal">Fee</th>
+            <th scope="col " class="ml-2 font-weight-normal"> School</th>
+            <th scope="col " class="ml-2 font-weight-normal">Intake</th>
+            <th scope="col" class="font-weight-normal">Level</th>
+
+          </tr>
+        </thead>
+        <tbody class="p-2">
+          <tr class="p-3">
+
+            <td class="font-weight-light">{{progDetails.city}}</td>
+            <td class="font-weight-light">{{progDetails.Language}}</td>
+            <td class="font-weight-light">{{progDetails.length}}</td>
+            <td class="font-weight-light">{{progDetails.fee}}</td>
+            <td class="font-weight-light ">{{progDetails.school}}</td>
+            <td class="font-weight-light"> {{progDetails.intake}}</td>
+            <td class="font-weight-light">{{progDetails.level}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

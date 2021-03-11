@@ -12,7 +12,10 @@ import { GetprogramsService } from './../getprograms.service';
 export class ProgramsComponent implements OnInit {
   smartphone: any = [];
   allData:any = [];
-  word:string ="" ;
+  /************* */
+  wordType:string ="" ;
+  wordCity:string="";
+  wordFilter:any
   /******************* */
  /*****attrs for filtering data */
   city:any;
@@ -43,7 +46,8 @@ export class ProgramsComponent implements OnInit {
    {
           console.log(info.value)
    }
-
+   incrementEle()
+   {}
   ngOnInit(): void {
   }
 
