@@ -1,158 +1,170 @@
 <div class="cont">
   <div class="container">
-    <div class="pt-5 m-auto">
-      <div class="input-group mb-3 w-75 inpGrp ml-5">
+    <div class="row  pt-5 m-auto">
+      <div class=" input-group mb-3 w-75 inpGrp ml-5">
         <input
           type="search"
-          class="form-control"
+          class="form-control col-lg-6 col-md-6 col-sm-12"
           placeholder="what do you whant to leaen?"
           [(ngModel)]="word"
         />
         <input
           type="search"
-          class="form-control"
+          class="form-control "
           placeholder="Write or choose city"
         />
 
         <div class="input-group-append">
-          <span class="input-group-text" id="basic-addon2">seaech</span>
+          <span class="input-group-text bg-primary colorSearch text-white" id="basic-addon2">seaech</span>
         </div>
 
 
       </div>
     </div>
     <!------------------------------------------------>
-
     <div class="row">
       <!--filter section-->
-      <div class="col-md-3 my-5 bg-white py-3 px-2 bgwhite">
-        <form #filterForm="ngForm">
-        <div class="city mb-3">
+      <div class=" col-lg-3 col-md-10 my-5 bg-white py-3 px-4 bgwhite">
+        <form #filterForm="ngForm" (ngSubmit)="getFilteredValues(filterForm)">
+        <div class="city mb-3 mx-2">
           <h5 class="mb-2">City</h5>
-          <input type="text" class="form-control" placeholder="choose one city or more"  />
+          <input type="text"name="city" [(ngModel)]="city" class="form-control" placeholder="choose one city or more"  />
         </div>
-        <div class="program mb-3">
-          <h5>Program</h5>
-          <div class="form-check">
+        <div class="program mb-3 mx-2 row">
+          <h5 class="col-12" style="padding-left: 0px;">Program</h5>
+          <div class="form-check col-lg-12 col-md-3 col-sm-4">
             <input
               class="form-check-input"
               type="radio"
-              name="exampleRadios"
+              name="program"
               id="exampleRadios1"
-              value="option1"
+              value="bach"
               checked
+              [(ngModel)]="prog"
             />
             <label class="form-check-label" for="exampleRadios1">
               Bachelor
             </label>
           </div>
-          <div class="form-check">
+          <div class="form-check col-lg-12 col-md-3 col-sm-4">
             <input
               class="form-check-input"
               type="radio"
-              name="exampleRadios"
+              name="program"
               id="exampleRadios2"
-              value="option2"
+              value="master"
+              [(ngModel)]="prog"
             />
             <label class="form-check-label" for="exampleRadios2"> Master </label>
           </div>
-          <div class="form-check">
+          <div class="form-check col-lg-12 col-md-3 col-sm-4">
             <input
               class="form-check-input"
               type="radio"
-              name="exampleRadios"
+              name="program"
               id="exampleRadios2"
-              value="option2"
+              value="mba"
+              [(ngModel)]="prog"
             />
             <label class="form-check-label" for="exampleRadios2"> MBA </label>
           </div>
-          <div class="form-check">
+          <div class="form-check col-lg-12 col-md-3 col-sm-4">
             <input
-              class="form-check-input"
+              class="form-check-input "
               type="radio"
-              name="exampleRadios"
+              name="program"
               id="exampleRadios2"
-              value="option2"
+              value="bhd"
+              [(ngModel)]="prog"
             />
             <label class="form-check-label" for="exampleRadios2"> BHD </label>
           </div>
         </div>
         <!------->
-        <div class="field mb-3">
+        <div class="field mb-3 mx-2">
           <h5 for="field">Field</h5>
           <input
-            type="text" id="field" class="form-control" placeholder="choose one Field or more"/>
+            type="text" id="field" class="form-control" placeholder="choose one Field or more"
+            name="field" [(ngModel)]="field"
+            />
         </div>
         <!------->
-        <div class="school mb-3">
+        <div class="school mb-3 mx-2">
           <h5>School</h5>
           <input
             type="search"
             class="form-control"
             placeholder="choose one school or more"
+            name="scl" [(ngModel)]="school"
           />
         </div>
         <!------->
-        <div class="lang mb-3">
-          <h5>Language</h5>
-          <div class="form-check">
+        <div class="lang mb-3 mx-2 row">
+          <h5 class="col-12" style="padding-left: 0px;">Language</h5>
+          <div class="form-check col-lg-12 col-md-4 col-sm-4">
             <input
               class="form-check-input"
               type="radio"
-              name="exampleRadios"
+              name="langu"
               id="exampleRadios1"
-              value="option1"
+              value="all"
               checked
               [(ngModel)]="lang"
+
+
             />
             <label class="form-check-label" for="exampleRadios1"> ALL </label>
           </div>
-          <div class="form-check">
+          <div class="form-check col-lg-12 col-md-4 col-sm-4">
             <input
               class="form-check-input"
               type="radio"
-              name="exampleRadios"
+              name="langu"
               id="exampleRadios2"
-              value="option2"
+              value="eng"
               [(ngModel)]="lang"
+
             />
             <label class="form-check-label" for="exampleRadios2"> English </label>
           </div>
-          <div class="form-check">
+          <div class="form-check col-lg-12 col-md-4 col-sm-4">
             <input
               class="form-check-input"
               type="radio"
-              name="exampleRadios"
+              name="langu"
               id="exampleRadios2"
-              value="option2"
+              value="french"
               [(ngModel)]="lang"
+
             />
             <label class="form-check-label" for="exampleRadios2"> French </label>
           </div>
         </div>
         <!------->
-        <div class="sort mb-3">
-          <h5>Sort</h5>
+        <div class="sort mb-3 mx-2 row" >
+          <h5 class="col-12" style="padding-left: 0px;">Sort</h5>
 
-          <div class="form-check">
+          <div class="form-check col-lg-12 mb-1 col-md-6 col-sm-12">
             <input
               class="form-check-input"
               type="radio"
-              name="exampleRadios"
+              name="sort"
               id="exampleRadios2"
-              value="option2"
+              value="lh"
+              [(ngModel)]="sort"
             />
             <label class="form-check-label" for="exampleRadios2">
               Price:low to high
             </label>
           </div>
-          <div class="form-check">
+          <div class="form-check col-md-6 col-lg-12 col-sm-12">
             <input
               class="form-check-input"
               type="radio"
-              name="exampleRadios"
+              name="sort"
               id="exampleRadios2"
-              value="option2"
+              value="hl"
+              [(ngModel)]="sort"
             />
             <label class="form-check-label" for="exampleRadios2">
               Price:high to low
@@ -160,7 +172,8 @@
           </div>
         </div>
 
-        <button class="btn btn-primary" type="submit">Filter</button>
+        <button class="btn btn-primary px-4 rounded" type="submit">Filter</button>
+        <!-- {{filterForm.value|json}} -->
       </form>
       </div>
       <!------------------------------------------------------>
@@ -171,17 +184,17 @@
           <div *cdkVirtualFor="let item of allData|search:word" class="item">
             <div>
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 w-75 mt-5 ">
                   <img
-                    [src]="imgHolder" class="w-75" alt="" />
+                    [src]="imgHolder" class="w-50 ml-4 rounded" alt="" />
                 </div>
                 <div class="col-md-8 pt-5">
-                  <h6>{{ item.Name }}</h6>
+                  <h4>{{ item.Name }}</h4>
                   <p>{{ item.type }}</p>
                   <span class="mr-2 text-muted">Tuition Fee:</span>
                   <span class="text-primary mr-4 modifyInfo">{{ item.fee}} $ Per Year </span>
                   <span class="text-primary modifyInfo ">{{ item.city }}</span>
-                  <span class="ml-5 btn btn-primary ">More info</span>
+                  <span class="ml-5 btn chgColorBtn text-white">More info</span>
                 </div>
               </div>
               <hr />

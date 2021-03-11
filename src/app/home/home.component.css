@@ -390,5 +390,13 @@ ul.social2 li a:hover{
 
 }
 
+.allele
+{
+  overflow: hidden !important;
+}
+.big
+{
+  line-height: 0.8;
+}
 
 

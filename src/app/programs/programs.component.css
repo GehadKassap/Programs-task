@@ -14,7 +14,15 @@
 {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+button , .chgColorBtn
+{
+  background-color:#1C85C8 ;
+}
+img
+{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
+}
 .modifyInfo
 {
   cursor: pointer;
@@ -22,16 +30,32 @@
 /******** for bg of component******/
 .cont
 {
-  background-image: url(../../assets/Images/prog.jpg);
+  background-image: url(../../assets/Images/Group.svg);
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 40% 60%;
+  background-position: left top;
 
 }
 .bgwhite
 {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
+}
+h5
+{
+  font-size: 18px;
+  color: rgb(140,140,140);
+}
+label
+{
+  color: rgb(120,120,120);
+}
+.colorSearch
+{
+  border-color: rgb(0,123,255);
 }

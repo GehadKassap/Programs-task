@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { GetprogramsService } from './../getprograms.service';
 
 
@@ -13,9 +14,16 @@ export class ProgramsComponent implements OnInit {
   allData:any = [];
   word:string ="" ;
   /******************* */
-  lang:any;
+ /*****attrs for filtering data */
+  city:any;
+  school:any;
+  field:any;
+  lang:any = "all";
+  sort:any ="lh";
+  prog:any ="bach";
+  /********************** */
   /******************** */
-  imgSrc:string="6";
+
   radomNum = Math.floor((Math.random()*24)+1).toString();
 
   imgHolder:string =`../../assets/Images/img${this.radomNum}.png`;
@@ -29,6 +37,11 @@ export class ProgramsComponent implements OnInit {
 
     })
 
+   }
+   /******to get values of filter form  */
+   getFilteredValues(info:NgForm):void
+   {
+          console.log(info.value)
    }
 
   ngOnInit(): void {
