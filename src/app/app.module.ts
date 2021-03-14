@@ -14,7 +14,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { DetailsComponent } from './details/details.component';
 import { CitysearchPipe } from './citysearch.pipe';
-import { FilterprogPipe } from './filterprog.pipe'
+import { FilterprogPipe } from './filterprog.pipe';
+import { FooterComponent } from './footer/footer.component'
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,15 +28,19 @@ import { FilterprogPipe } from './filterprog.pipe'
     HomeComponent,
     DetailsComponent,
     CitysearchPipe,
-    FilterprogPipe
+    FilterprogPipe,
+    FooterComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule ,
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    ScrollingModule
+    ScrollingModule,
+
+
 
   ],
   providers: [],

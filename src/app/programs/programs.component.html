@@ -1,22 +1,22 @@
 <div class="cont">
   <div class="container">
-    <div class="pt-5 m-auto">
-      <div class=" input-group mb-3 w-75 inpGrp ml-5  row">
+    <div class="pt-5 m-auto row">
+      <div class=" input-group mb-3 w-75 inpGrp ml-5  " >
         <input
           type="search"
-          class="form-control col-lg-6 col-md-6 col-sm-12"
+          class="form-control col-lg-5 col-md-5 col-sm-12 col-12 px-4 py-4 "
           placeholder="what do you whant to leaen?"
           [(ngModel)]="wordType"
         />
         <input
           type="search"
-          class="form-control col-lg-6 col-md-6 col-sm-12 "
+          class="form-control col-lg-5 col-md-5 col-sm-12 col-12 px-4 py-4 "
           placeholder="Write or choose city"
           [(ngModel)]="wordCity"
         />
 
-        <div class="input-group-append">
-          <span class="input-group-text bg-primary colorSearch text-white" id="basic-addon2">seaech</span>
+        <div class="input-group-append text-center col-lg-2 col-md-2 col-sm-12 col-12 bg-primary ">
+          <span class="input-group-text  bg-primary colorSearch text-white px-3 py-2" id="basic-addon2">seaech</span>
         </div>
 
 
@@ -25,12 +25,16 @@
     <!------------------------------------------------>
     <div class="row">
       <!--filter section-->
-      <div class=" col-lg-3 col-md-10 my-5 bg-white py-3 px-4 bgwhite">
+      <div class=" col-lg-3 col-md-10 my-5 bg-white py-3 px-4 bgwhite m-auto " >
         <form #filterForm="ngForm" (ngSubmit)="getFilteredValues(filterForm)">
-        <div class="city mb-3 mx-2">
-          <h5 class="mb-2">City</h5>
-          <input type="text"name="city" [(ngModel)]="city" class="form-control" placeholder="choose one city or more"  />
-        </div>
+          <div class="form-group city mb-3 mx-2">
+            <label for="exampleFormControlSelect1">City</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="city" [(ngModel)]="city">
+              <option *ngFor="let cityArr of allData">{{cityArr.city}}</option>
+
+            </select>
+          </div>
+
         <div class="program mb-3 mx-2 row">
           <h5 class="col-12" style="padding-left: 0px;">Program</h5>
           <div class="form-check col-lg-12 col-md-3 col-sm-4">
@@ -82,22 +86,23 @@
           </div>
         </div>
         <!------->
-        <div class="field mb-3 mx-2">
-          <h5 for="field">Field</h5>
-          <input
-            type="text" id="field" class="form-control" placeholder="choose one Field or more"
-            name="field" [(ngModel)]="field"
-            />
+        <div class="form-group field mb-3 mx-2">
+          <label for="exampleFormControlSelect1">Field</label>
+          <select class="form-control" id="exampleFormControlSelect1"name="field" [(ngModel)]="field">
+            <option *ngFor="let fieldArr of allData">{{fieldArr.type}}</option>
+
+          </select>
         </div>
+
+
         <!------->
-        <div class="school mb-3 mx-2">
-          <h5>School</h5>
-          <input
-            type="search"
-            class="form-control"
-            placeholder="choose one school or more"
-            name="scl" [(ngModel)]="school"
-          />
+
+        <div class="form-group school mb-3 mx-2">
+          <label for="exampleFormControlSelect1">School</label>
+          <select class="form-control" id="exampleFormControlSelect1" name="scl" [(ngModel)]="school">
+            <option *ngFor="let sclArr of allData">{{sclArr.school}}</option>
+
+          </select>
         </div>
         <!------->
         <div class="lang mb-3 mx-2 row">
@@ -173,29 +178,31 @@
           </div>
         </div>
 
-        <button class="btn btn-primary px-4 rounded" type="submit">Filter</button>
+        <button class="btn btn-primary px-4 rounded" type="submit" (click)="search()">Filter</button>
         <!-- {{filterForm.value|json}} -->
       </form>
       </div>
       <!------------------------------------------------------>
-      <div class="col-md-1"></div>
-      <div class="col-md-8 my-5 bg-white py-3 px-2 bgwhite">
-        <cdk-virtual-scroll-viewport itemSize="100" class="showData mt-5">
+      <div class="col-md-1 my-5 "></div>
+      <div class="col-md-8 my-5  bg-white  py-2 px-2 bgwhite m-auto">
+        <cdk-virtual-scroll-viewport itemSize="100" class="showData mt-5 ">
           <!--display data data-->
-          <div *cdkVirtualFor="let item of allData|search:wordType |citysearch:wordCity |filterprog:wordFilter ; let i = index ;"  class="item">
+          <div *cdkVirtualFor="let item of allData|search:wordType |citysearch:wordCity ; let i = index ;"  class="item">
             <div>
               <div class="row">
-                <div class="col-md-4  w-75 mt-5 ">
+                <div class=" col-lg-5 col-md-3  w-50 mt-5 hideImg "  >
+
                   <img
-                    [src]="imgHolder" class="w-50 ml-4 rounded" alt="" />
+                    src='../../assets/Images/{{item.school}}.png'  class="img-fluid ml-4 rounded "
+                 />
                 </div>
-                <div class="col-md-8  pt-5">
+                <div class="col-lg-7 col-md-9   pt-5">
                   <h4>{{ item.Name }}</h4>
                   <p>{{ item.type }}</p>
                   <span class="mr-2 text-muted">Tuition Fee:</span>
-                  <span class="text-primary mr-4 modifyInfo">{{ item.fee}} $ Per Year </span>
+                  <span class="text-primary mr-1 modifyInfo">{{ item.fee}} $ Per Year </span>
                   <span class="text-primary modifyInfo ">{{ item.city }}</span>
-                  <span class="ml-5 btn chgColorBtn text-white" [routerLink] = "['/progdetails' , i]">More info</span>
+                  <span class="ml-2 btn chgColorBtn text-white" [routerLink] = "['/progdetails' , i]">More info</span>
                 </div>
               </div>
               <hr />
